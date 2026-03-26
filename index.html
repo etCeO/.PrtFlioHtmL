@@ -4,145 +4,265 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ethan Ernesto Lopez | Data Science Portfolio</title> <!-- page title -->
-    <style> /* CSS styles for my portfolio */
-        .project-skills {
-            margin-bottom: 0.9rem; /* creates space before the link */
+    <style>
+        /* =========================
+           Root Theme Variables
+        ========================= */
+        html {
+            scroll-behavior: smooth;
+        }        
+        :root {
+            --primary: #0f172a;     /* deep slate */
+            --accent: #2563eb;      /* modern blue */
+            --bg: #f8fafc;          /* light neutral */
+            --text: #1e293b;
+            --muted: #64748b;
+            --card: #ffffff;
+            --border: #e2e8f0;
+        
+            --radius: 8px;
+            --spacing: 1rem;
+            --transition: 0.2s ease;
         }
-        .card a { /* styles for project links */
-            display: inline-block;
-            margin-top: 0.4rem;
-        }
-        .project-skills span { /* styles for project skill tags */
-            display: inline-block;
-            background: #ecfeff;
-            color: #0f766e;
-            padding: .35rem .7rem;
-            border-radius: 16px;
-            margin: .2rem .25rem;
-            font-size: .85rem;
-        }
-        form { /* styles for contact form */
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-        }
-
-        input, textarea { /* styles for form inputs */
-            padding: 0.7rem;
-            border-radius: 5px;
-            border: 1px solid #d1d5db;
-            font-size: 1rem;
-            font-family: inherit;
-        }
-
-        input:focus, textarea:focus { /* styles for focused form inputs */
-            outline: none;
-            border-color: var(--accent);
-        }
-
-        button { /* styles for form submit button */
-            background: var(--accent);
-            color: white;
-            border: none;
-            padding: 0.75rem;
-            font-size: 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover { /* styles for hovered form submit button */
-            opacity: 0.9;
-        }
-        .profile-pic { /* styles for profile picture */
-            width: 160px;
-            height: 160px;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: top;      
-            border: 4px solid #e5e7eb;
-            margin-bottom: 1rem;
-        }
-        :root { /* CSS variables for consistent theming */
-            --primary: #1f2933;
-            --accent: #0066cc;
-            --bg: #f4f6f8;
-            --text: #2c3e50;
-            --card: #fff;
-        }
-        body { /* global styles for the site's body */
+        
+        /* =========================
+           Global Styles
+        ========================= */
+        body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Inter, sans-serif;
             background: var(--bg);
             color: var(--text);
+            line-height: 1.6;
         }
-        header { /* styles for the header section */
+        
+        /* =========================
+           Header
+        ========================= */
+        header {
             background: var(--primary);
             color: white;
             padding: 3rem 1rem;
             text-align: center;
+            border-bottom: 1px solid #1e293b;
         }
-        header h1 { /* styles for the main heading */
-            font-size: 2.8rem;
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
         }
-        header p { /* styles for subheading */
-            font-size: 1.2rem;
-            color: #d1d5db;
+        
+        header p {
+            font-size: 1.1rem;
+            color: #94a3b8;
         }
-        nav { /* styles for the navigation bar */
-            background: #111827;
-            padding: .75rem;
+        
+        /* =========================
+           Navigation
+        ========================= */
+        nav {
+            background: #020617;
+            padding: 0.8rem;
             text-align: center;
+            border-bottom: 1px solid var(--border);
         }
-        nav a { /* styles for navigation links */
-            color: #e5e7eb;
-            margin: 0 .8rem;
+        
+        nav a {
+            color: #cbd5f5;
+            margin: 0 0.75rem;
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 0.95rem;
+            transition: var(--transition);
         }
-        nav a:hover { color: var(--accent); }
-        section { /* styles for portfolio sections */
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+        
+        nav a:hover {
+            color: var(--accent);
         }
-        h2 { /* styles for main section headings */
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: .4rem;
-            margin-bottom: 1rem;
+        
+        /* =========================
+           Sections
+        ========================= */
+        section {
+            max-width: 1000px;
+            margin: 2.5rem auto;
+            padding: 1.5rem 1.5rem;
+            
+            background: #f1f5f9;          /* darker light gray */
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            scroll-margin-top: 80px;
+        }        
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
             color: var(--primary);
-        }
-        .card { /* styles for content cards (projects) */
+            
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #bfdbfe; /* light blue line */
+        }   
+        section + section {
+            margin-top: 2rem;
+        }        
+        /* =========================
+           Cards (Projects)
+        ========================= */
+        .card {
             background: var(--card);
-            padding: 1.5rem;
-            border-radius: 6px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-            margin-bottom: 1.5rem;
+            padding: 1.4rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+            transition: var(--transition);
+            font-family: inherit;
         }
-        .skills span { /* styles for skill tags in the main skills section */
+        
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+        }
+        
+        .card a {
             display: inline-block;
-            background: #e0e7ff;
-            color: #1e40af;
-            padding: .4rem .8rem;
-            border-radius: 20px;
-            margin: .2rem .3rem;
-            font-size: .9rem;
+            margin-top: 0.5rem;
+            font-weight: 500;
         }
-        .projects { /* styles for main projects */
+        
+        /* =========================
+           Projects Grid
+        ========================= */
+        .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.2rem;
         }
-        footer { /* styles for the footer section */
-            background: #111827;
-            color: #9ca3af;
-            text-align: center;
-            padding: 1.8rem;
-            margin-top: 2rem;
+        
+        /* =========================
+           Skill Tags
+        ========================= */
+        .project-skills {
+            margin-bottom: 0.8rem;
         }
-        a { color: var(--accent); text-decoration: none; } /* styles for all links */
-        a:hover { text-decoration: underline; } /* styles for hovered links */
-    </style>
-</head> 
+        
+        .project-skills span {
+            display: inline-block;
+            background: #eff6ff;
+            color: #1d4ed8;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            margin: 0.2rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border: 1px solid #dbeafe;
+        }
+        
+        /* Main skills section */
+        .skills span {
+            display: inline-block;
+            background: #f1f5f9;
+            color: var(--text);
+            padding: 0.35rem 0.7rem;
+            border-radius: 6px;
+            margin: 0.25rem;
+            font-size: 0.8rem;
+            border: 1px solid var(--border);
+        }
+        
+        /* =========================
+           Profile Picture
+        ========================= */
+        .profile-pic {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top center; /* 👈 key line */
+            border: 3px solid var(--border);
+            margin-bottom: 1rem;
+        }        
+        /* =========================
+           Forms
+        ========================= */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        input, textarea {
+            padding: 0.65rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            font-size: 0.95rem;
+            background: white;
+            transition: var(--transition);
+        }
+        
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.15);
+        }
+        /* Ensure ALL form elements match site typography */
+        input,
+        textarea,
+        button {
+            font-family: inherit;
+            font-size: 0.95rem;
+            color: var(--text);
+        }        
+        /* =========================
+           Buttons
+        ========================= */
+        button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.7rem;
+            font-size: 0.95rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        button:hover {
+            background: #1d4ed8;
+        }
+        
+        /* =========================
+           Footer
+        ========================= */
+        footer {
+            background: #020617;
+            color: #94a3b8;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+        }
+        
+        /* =========================
+           Links
+        ========================= */
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+
+        #contact h3 {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary);
+        }        
+        </style>
+    </head> 
 <body>
 
     <header>
@@ -170,9 +290,9 @@
     <h2>About Me</h2> <!-- section heading for main summary -->
     <div class="card">
         <p>
-            I'm an undergraduate student in Data Science at Chapman University with a keen passion for converting complex information into easily comprehensible and actionable results. Throughout my academic career, I've been enhancing my capacity to create intuitive models that aid in the process of informed decision-making.</p>
-
-        <p>   I thrive best in environments that are team-based and collaborative, where shared ideas and problem-solving come together to achieve best results. My specialties range from data handling to exploring new statistical and machine learning techniques, presenting results in visually appealing mannerisms that are both technically sound and user-friendly. I enjoy working with programming languages such as Python, R, and SQL to develop solutions that are clear and efficient to real-world impacts.        </p>
+            I’m a Data Science student at Chapman University with a genuine interest in understanding data and its relation to human behavior. Whether that be understanding the social networks of STEM students or analyzing millions of online booking records, what draws me into the field isn’t just the technical challenge, but the potential to transform data into meaningful insights that influence industry decisions.</p>
+        <p>Through my experiences in research, machine learning, and teaching others these concepts, I've learned that the most impactful solutions are the ones that are clear and collaborative. While working extensively with statistical models, cleaning large datasets, and designing visualizations, the balance between algorithm depth and communication continues to be something I emphasize and deeply care about.</p>
+        <p>  I enjoy working across the full data science pipeline. From data collection and preprocessing to modeling and visualization, I frequently use tools like Python, Excel, and R build practical, efficient solutions that don’t just work well in theory but have a scalable, measurable impact.      </p>
     </div>
 </section>
 
@@ -206,7 +326,7 @@
     <h2>Professional Experience</h2>
 
     <div class="card">
-        <p><strong>Research Assistant - Social Network Analysis (MR-QAP) • Chapman University</strong><br>Mar 2026 – Present</p>
+        <p><strong>Research Assistant – Social Network Analysis (MR-QAP) • Chapman University</strong><br>Mar 2026 – Present</p>
         <ul>
             <li>Analyze how algorithmic student grouping impacts collaboration and classroom dynamics.</li>
             <li>Manage datasets, applying Python and MR-QAP with key social network metrics.</li>
@@ -224,9 +344,9 @@
     </div>
 
     <div class="card">
-        <p><strong>Data Entry / Administrative Assistant • Chapman University</strong><br>Jun 2025 – Aug 2025</p>
+        <p><strong>Data Entry & Administrative Assistant • Chapman University</strong><br>Jun 2025 – Aug 2025</p>
         <ul>
-            <li><strong>Student Assistant - Office of Accreditation & Assessment</strong></li>
+            <li><strong>Student Assistant – Office of Accreditation & Assessment</strong></li>
             <li>Managed and cleaned datasets of 50+ student records for analysis and reporting.</li>
             <li>Analyzed Qualtrics survey data and produced visual reports for stakeholders.</li>
             <li>Improved data delivery by creating dashboards and automating Excel workflows.</li>
@@ -234,9 +354,9 @@
     </div>
 
     <div class="card">
-        <p><strong>Teaching Assistant - Arduino Smart Car Workshops • Chapman University</strong><br>Jun 2025 – Jul 2025</p>
+        <p><strong>Teaching Assistant – Arduino Smart Car Workshops • Chapman University</strong><br>Jun 2025 – Jul 2025</p>
         <ul>
-            <li><strong>Summer Engineering Academy Student Employee - Arduino Car</strong></li>
+            <li><strong>Summer Engineering Academy Employee – Arduino Cars</strong></li>
             <li>Supported robotics hardware construction and troubleshooting.</li>
             <li>Provided technical programming assistance using Arduino IDE.</li>
             <li>Supervised experiments and evaluated outcomes for program effectiveness.</li>
@@ -253,7 +373,8 @@
         <p><strong>Chapman University</strong> — Orange, CA</p>
         <p>B.S. in Data Science, Minor: Business Administration<br>
         GPA: 3.89 | Expected Graduation: May 2026</p>
-        <p><strong>Relevant Coursework:</strong> Applied Business Analytics, Machine Learning, Data Structures & Algorithms, Database Management, Data Networks & Communications, Human-Computer Interaction, Artificial Intelligence</p>
+        <p><strong>Relevant Coursework:</strong></p>
+        <p>Applied Business Analytics, Machine Learning, Data Structures & Algorithms, Database Management, Business Statistics, Data Networks & Communications, Statistical Models in Business Analytics, Human-Computer Interaction, Artificial Intelligence</p>
     </div>
 </section>
 
@@ -267,7 +388,7 @@
             <span>GitHub</span><span>C++</span><span>Swift</span><span>Figma</span><span>Arduino IDE</span>
             <span>Java</span><span>Unix Commands</span><span>GUI</span><span>Tableau</span><span>HTML</span>
             <span>Alteryx Cloud</span><span>CSS</span><span>Terminal</span><span>Dyplr</span><span>MySql</span>
-            <span>C</span><span>JavaScript</span><span>C#</span><span>Jupyter Notebooks</span>
+            <span>C</span><span>JavaScript</span><span>C#</span><span>Jupyter Notebooks</span><span>Google Colab</span>
         </div>
     </div>
 </section>
@@ -673,10 +794,11 @@
             Whether you’d like to collaborate, discuss projects, or simply start a conversation,
             feel free to reach out. <!-- contact invitation -->
         </p> <!-- contact details with links -->
-        <p>Email: <a href="mailto:ethanelopez04@gmail.com">ethanelopez04@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/ethan-e-lopez/" target="_blank">linkedin.com/in/ethan-e-lopez</a></p>
-        <p>GitHub: <a href="https://github.com/etCeO" target="_blank">github.com/etCeO</a></p>
-
+        <p>Contact: 
+            <a href="mailto:ethanelopez04@gmail.com">Email</a> · 
+            <a href="https://www.linkedin.com/in/ethan-e-lopez/" target="_blank">LinkedIn</a> · 
+            <a href="https://github.com/etCeO" target="_blank">GitHub</a>
+        </p>
         <hr style="margin:1.5rem 0;">
 
         <h3>Send me a message</h3> <!-- contact form for sending messages directly from the website -->
