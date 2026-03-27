@@ -108,6 +108,31 @@
         /* =========================
            Cards (Projects)
         ========================= */
+        .btn {
+            display: inline-block;
+            padding: 10px 16px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            background: linear-gradient(135deg, #007BFF, #00C6FF);
+            border-radius: 8px;
+            font-weight: 500;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);        
+        }
+
+        /* Hover effect */
+        .btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-1px);
+        }
+
+        /* Click effect */
+        .btn:active {
+            transform: translateY(0);
+        }        
         .card {
             background: var(--card);
             padding: 1.4rem;
@@ -125,9 +150,17 @@
         
         .card a {
             display: inline-block;
-            margin-top: 0.5rem;
             font-weight: 500;
-        }
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            background-color: #007BFF;
+            color: white;
+            font-size: 0.9rem;
+            text-align: left;
+        }        
         
         /* =========================
            Projects Grid
@@ -137,7 +170,16 @@
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.2rem;
         }
-        
+        .project-category {
+            margin-bottom: 3rem;
+        }
+
+        .project-category h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            border-left: 4px solid #007BFF;
+            padding-left: 10px;
+        }        
         /* =========================
            Skill Tags
         ========================= */
@@ -300,22 +342,22 @@
     <h2>Featured</h2>
     <div class="card"> <!-- card with links to LinkedIn posts -->
         <ul>
-            <a href="https://www.linkedin.com/posts/ethan-e-lopez_chapmanuniversity-fowlerschoolofengineering-activity-7423521428009984000-S6e3?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEsGmggBJUHxmTFJ8XTgk0EUE_bb6E9W2Lc" target="_blank">
+            <a href="https://www.linkedin.com/posts/ethan-e-lopez_chapmanuniversity-fowlerschoolofengineering-activity-7423521428009984000-S6e3?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEsGmggBJUHxmTFJ8XTgk0EUE_bb6E9W2Lc" target="_blank" class="btn">
             Robotics Project Experience
             </a>
         </ul>
         <ul>
-            <a href="https://www.linkedin.com/posts/ethan-e-lopez-1a06642b1_datascience-chapmanuniversity-hci-activity-7415116254774169600-BVmk?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEsGmggBJUHxmTFJ8XTgk0EUE_bb6E9W2Lc" target="_blank">
+            <a href="https://www.linkedin.com/posts/ethan-e-lopez-1a06642b1_datascience-chapmanuniversity-hci-activity-7415116254774169600-BVmk?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEsGmggBJUHxmTFJ8XTgk0EUE_bb6E9W2Lc" target="_blank" class="btn">
             Fall '25 Semester Highlights
             </a>
         </ul>
         <ul>
-            <a href="https://www.linkedin.com/posts/ethan-e-lopez-1a06642b1_happy-new-year-everyone-it-activity-7415104270225776642-4t-R?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEsGmggBJUHxmTFJ8XTgk0EUE_bb6E9W2Lc" target="_blank">
+            <a href="https://www.linkedin.com/posts/ethan-e-lopez-1a06642b1_happy-new-year-everyone-it-activity-7415104270225776642-4t-R?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEsGmggBJUHxmTFJ8XTgk0EUE_bb6E9W2Lc" target="_blank" class="btn">
             Summer '25 Semester Highlights
             </a>
         </ul>
         <ul>
-            <a href="https://www.linkedin.com/posts/ethan-e-lopez-1a06642b1_these-past-three-semesters-i-had-the-pleasure-activity-7336955720073961472-2_7a?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEsGmggBJUHxmTFJ8XTgk0EUE_bb6E9W2Lc" target="_blank">
+            <a href="https://www.linkedin.com/posts/ethan-e-lopez-1a06642b1_these-past-three-semesters-i-had-the-pleasure-activity-7336955720073961472-2_7a?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEsGmggBJUHxmTFJ8XTgk0EUE_bb6E9W2Lc" target="_blank" class="btn">
             ProGach App Development Experience
         </a>
         </ul>
@@ -402,13 +444,16 @@
         </p>
         <a 
             href="Ethan_E_Lopez_Resume.pdf" 
-            target="_blank"
+            target="_blank" class="btn"
             style="font-weight: bold; font-size: 1.05rem;"
         >
             View Resume
         </a>
         <p style="margin-top: 1rem;">
-            <a href="Ethan_E_Lopez_Resume.pdf" download>
+            <a href="Ethan_E_Lopez_Resume.pdf" download             
+            target="_blank" class="btn"
+            style="font-weight: bold; font-size: 0.85rem;"
+            >
                 Download PDF
             </a>
         </p>
@@ -417,72 +462,322 @@
 
 <section id="projects"> <!-- section heading for projects and project highlights -->
     <h2>Projects</h2>
+    
+    <div class="project-category">
+        <h3>Python & Data Science</h3>
+        <p class="category-description">
+            Machine learning, data analysis, and applied statistical modeling projects.
+        </p>        
+        <div class="projects">
+            <div class="card">
+                <h3>NED Robot Tic-Tac-Toe Automation</h3> <!-- project title -->
+                <p>
+                    Developed a program for NED robots to autonomously play Tic-Tac-Toe using Python and computer vision. <!-- project description -->
+                </p>
+    
+                <div class="project-skills"> <!-- skill tags for project-specific technologies and techniques -->
+                    <span>Python</span>
+                    <span>Robotics Programming</span>
+                    <span>Computer Vision</span>
+                    <span>HSV Color Detection</span>
+                    <span>State-Based Logic</span>
+                    <span>Motion Control</span>
+                </div>
+                                        
+                <a 
+                    href="https://github.com/etCeO/.Ned2TicTacToePy" 
+                    target="_blank" class="btn"
+                >
+                    View Project Repository 
+                </a>
+            </div>
+            <div class="card">
+                <h3>Statistical Models Capstone</h3>
+                <p>
+                    Applied multiple machine learning models with clustering to
+                    identify customer behavior segments and key behavioral drivers.
+                </p>
+    
+                <div class="project-skills">
+                    <span>Python</span>
+                    <span>Scikit-Learn</span>
+                    <span>Clustering</span>
+                    <span>Model Evaluation</span>
+                    <span>Feature Engineering</span>
+                    <span>Data Visualization</span>
+                </div>
+                                        
+                <a 
+                    href="https://docs.google.com/presentation/d/1kIDVIE7pJMG85N4BTISj4br00xd0yBhFSfypMXSVWmM/edit?slide=id.g20a455cc9cd_0_0#slide=id.g20a455cc9cd_0_0"
+                    target="_blank" class="btn"
+                >
+                    View Project Presentation 
+                </a>
+            </div>
+            <div class="card">
+                <h3>College Placement Analysis</h3>
+                <p>
+                    Applied data analysis techniques to analyze 10,000+ student records and communicate model results through effective visualizations.
+                </p>
+            
+                <div class="project-skills">
+                    <span>Python</span>
+                    <span>Pandas</span>
+                    <span>NumPy</span>
+                    <span>Data Cleaning</span>
+                    <span>Exploratory Data Analysis</span>
+                    <span>Matplotlib</span>
+                    <span>Data Visualization</span>
+                </div>
+            
+                <a href="https://docs.google.com/presentation/d/1B_nop3aA-1DpjGAnqLCbx2D9OI-p9o2_CH8BxWSZkhI/edit?usp=sharing" target="_blank" class="btn">
+                    View Project Presentation
+                </a>
+            </div>
+            <div class="card">
+                <h3>Business Analytics Foundations Overview</h3>
+                <p>
+                    Applied regression and classification models to analyze stakeholder behavior and drive data-informed recommendations.            
+                </p>
+    
+                <div class="project-skills">
+                    <span>Regression Analysis</span>
+                    <span>Classification Models</span>
+                    <span>Python</span>
+                    <span>Data Analysis</span>
+                    <span>Model Interpretation</span>
+                    <span>Business Insights</span>
+                </div>            
+    
+                <a 
+                    href="https://docs.google.com/presentation/d/1dB9JbMPjeEQebhnWXhg1x_uBjXmeZO1MpAO-BFVFA_0/edit?usp=sharing"
+                    target="_blank" class="btn"
+                >
+                    View Project Presentation 
+                </a>
+            </div>
+    
+        </div>
+    </div>
+
+    <div class="project-category">
+        <h3>C++ & Algorithms</h3>
+        <p class="category-description">
+            Efficient algorithms, data structures, and multi-class performance projects.
+        </p>        
+        <div class="projects">
+            <div class="card">
+                <h3>Kruskal's Algorithm</h3>
+                <p>
+                    Implemented a C++ solution to compute minimum spanning tree costs from weighted adjacency matrices using Kruskal’s algorithm.            
+                </p>
+    
+                <div class="project-skills">
+                    <span>C++</span>
+                    <span>Graph Theory</span>
+                    <span>Minimum Spanning Trees</span>
+                    <span>Algorithms</span>
+                    <span>Data Structures</span>
+                    <span>Time Complexity Analysis</span>
+                </div>
+                            
+                <a 
+                    href="https://github.com/etCeO/.KrsklsAlgCpp"
+                    target="_blank" class="btn"
+                >
+                    View Project Repository 
+                </a>
+            </div>
+            <div class="card">
+                <h3>Scare Games</h3>
+                <p>
+                    Developed a binary tree simulation to manage tournament progression based on player scores.            
+                </p>
+    
+                <div class="project-skills">
+                    <span>C++</span>
+                    <span>Binary Trees</span>
+                    <span>Data Structures</span>
+                    <span>Algorithm Design</span>
+                    <span>Simulation</span>
+                </div>
+                            
+                <a 
+                    href="https://github.com/etCeO/.ScrGmsCpp"
+                    target="_blank" class="btn"
+                >
+                    View Project Repository 
+                </a>
+            </div>
+            <div class="card">
+                <h3>Blockchain Node Constructor</h3>
+                <p>
+                    Built lightweight database components in C++ supporting real-time ingestion and queries.            
+                </p>
+    
+                <div class="project-skills">
+                    <span>C++</span>
+                    <span>Blockchain Fundamentals</span>
+                    <span>Database Design</span>
+                    <span>Data Ingestion</span>
+                    <span>Query Processing</span>
+                    <span>Systems Programming</span>
+                </div>
+                            
+                <a 
+                    href="https://github.com/etCeO/.BlkChnLdgrCpp"
+                    target="_blank" class="btn"
+                >
+                    View Project Repository 
+                </a>
+            </div>
+            <div class="card">
+                <h3>Seat Reader View Analysis</h3>
+                <p>
+                    Developed a seating analysis program that determines stage visibility using height and arrangement data.            
+                </p>
+    
+                <div class="project-skills">
+                    <span>C++</span>
+                    <span>Algorithm Design</span>
+                    <span>Array Processing</span>
+                    <span>Data Analysis</span>
+                    <span>Problem Solving</span>
+                </div>
+                            
+                <a 
+                    href="https://github.com/etCeO/.StRdrVwCpp"
+                    target="_blank" class="btn"
+                >
+                    View Project Repository 
+                </a>
+            </div>
+            <div class="card">
+                <h3>Not So Super Mario Bros.</h3>
+                <p>
+                    Built a simulation that parses structured world data and models Mario’s progression, including enemy interactions, coin collection, and state updates.            
+                </p>
+    
+                <div class="project-skills">
+                    <span>C++</span>
+                    <span>Simulation Modeling</span>
+                    <span>State Management</span>
+                    <span>Data Parsing</span>
+                    <span>Algorithm Design</span>
+                </div>
+                            
+                <a 
+                    href="https://github.com/etCeO/.MrioBrsGmCpp"
+                    target="_blank" class="btn"
+                >
+                    View Project Repository 
+                </a>
+            </div>
+            <div class="card">
+                <h3>Robber Language Translator</h3>
+                <p>
+                    Designed a translation tool that processes text input, applies Robber Language rules, and outputs formatted HTML content.            
+                </p>
+    
+                <div class="project-skills">
+                    <span>C++</span>
+                    <span>String Manipulation</span>
+                    <span>Parsing Algorithms</span>
+                    <span>Text Processing</span>
+                    <span>HTML Generation</span>
+                </div>
+                            
+                <a 
+                    href="https://github.com/etCeO/.RbrTrnsltrCpp"
+                    target="_blank" class="btn"
+                >
+                    View Project Repository 
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-category">
+        <h3>Java & Object-Oriented Programming</h3>
+        <p class="category-description">
+            Scalable object-oriented projects with clean, modular designs.
+        </p>        
+        <div class="projects">
+
+            <div class="card">
+                <h3>DigiShelf Virtual Library Simulation</h3>
+                <p>
+                    Developed a library management simulation supporting catalog and customer operations.            
+                </p>
+    
+                <div class="project-skills">
+                    <span>Java</span>
+                    <span>Object-Oriented Programming</span>
+                    <span>System Simulation</span>
+                    <span>Data Management</span>
+                    <span>Software Design</span>
+                </div>
+                            
+                <a 
+                    href="https://github.com/etCeO/.DigiShelfJvaLibs"
+                    target="_blank" class="btn"
+                >
+                    View Project Repository 
+                </a>
+            </div>
+            <div class="card">
+                <h3>SlapJack Card Game</h3>
+                <p>
+                    Implemented game rules and combination detection to accurately simulate Slap gameplay scenarios.            
+                </p>
+    
+                <div class="project-skills">
+                    <span>Java</span>
+                    <span>Game Logic</span>
+                    <span>Algorithm Design</span>
+                    <span>Rule-Based Systems</span>
+                    <span>Simulation</span>
+                </div>
+                            
+                <a 
+                    href="https://github.com/etCeO/.SlpJvaCrdGm"
+                    target="_blank" class="btn"
+                >
+                    View Project Repository 
+                </a>
+            </div>
+            <div class="card">
+                <h3>Chipotle Ordering System</h3>
+                <p>
+                    Built an ordering system simulation that handles ingredient selection, pricing logic, and receipt generation.            
+                </p>
+    
+                <div class="project-skills">
+                    <span>Java</span>
+                    <span>Object-Oriented Programming</span>
+                    <span>Business Logic</span>
+                    <span>Pricing Algorithms</span>
+                    <span>System Simulation</span>
+                </div>
+                            
+                <a 
+                    href="https://github.com/etCeO/.ChptleJvaBrrto"
+                    target="_blank" class="btn"
+                >
+                    View Project Repository 
+                </a>
+            </div>
+    
+        </div>
+    </div>
+
+    <div class="project-category">
+        <h3>UX, Product, & Design</h3>
+        <p class="category-description">
+            User-centered design driven by structure, feedback, and usability.        
+        </p>        
+
     <div class="projects"> <!-- grid layout for project cards -->
-        <div class="card">
-            <h3>NED Robot Tic-Tac-Toe Automation</h3> <!-- project title -->
-            <p>
-                Developed a program for NED robots to autonomously play Tic-Tac-Toe using Python and computer vision. <!-- project description -->
-            </p>
-
-            <div class="project-skills"> <!-- skill tags for project-specific technologies and techniques -->
-                <span>Python</span>
-                <span>Robotics Programming</span>
-                <span>Computer Vision</span>
-                <span>HSV Color Detection</span>
-                <span>State-Based Logic</span>
-                <span>Motion Control</span>
-            </div>
-                                    
-            <a 
-                href="https://github.com/etCeO/.Ned2TicTacToePy" 
-                target="_blank"
-            >
-                View Project Repository 
-            </a>
-        </div>
-        <div class="card">
-            <h3>Statistical Models Capstone</h3>
-            <p>
-                Applied multiple machine learning models with clustering to
-                identify customer behavior segments and key behavioral drivers.
-            </p>
-
-            <div class="project-skills">
-                <span>Python</span>
-                <span>Scikit-Learn</span>
-                <span>Clustering</span>
-                <span>Model Evaluation</span>
-                <span>Feature Engineering</span>
-                <span>Data Visualization</span>
-            </div>
-                                    
-            <a 
-                href="https://docs.google.com/presentation/d/1kIDVIE7pJMG85N4BTISj4br00xd0yBhFSfypMXSVWmM/edit?slide=id.g20a455cc9cd_0_0#slide=id.g20a455cc9cd_0_0"
-                target="_blank"
-            >
-                View Project Presentation 
-            </a>
-        </div>
-        <div class="card">
-            <h3>College Placement Analysis</h3>
-            <p>
-                Applied data analysis techniques to analyze 10,000+ student records and communicate model results through effective visualizations.
-            </p>
-        
-            <div class="project-skills">
-                <span>Python</span>
-                <span>Pandas</span>
-                <span>NumPy</span>
-                <span>Data Cleaning</span>
-                <span>Exploratory Data Analysis</span>
-                <span>Matplotlib</span>
-                <span>Data Visualization</span>
-            </div>
-        
-            <a href="https://docs.google.com/presentation/d/1B_nop3aA-1DpjGAnqLCbx2D9OI-p9o2_CH8BxWSZkhI/edit?usp=sharing" target="_blank">
-                View Project Presentation
-            </a>
-        </div>
         <div class="card">
             <h3>StepUp Career Platform</h3>
             <p>
@@ -500,29 +795,7 @@
 
             <a 
                 href="https://docs.google.com/presentation/d/1-c068O56zs1snqzFFhqe4WA-PyuC2SpBIxu2bAX6hHk/edit?slide=id.g3aba9a9331c_0_0#slide=id.g3aba9a9331c_0_0"
-                target="_blank"
-            >
-                View Project Presentation 
-            </a>
-        </div>
-        <div class="card">
-            <h3>Business Analytics Foundations Overview</h3>
-            <p>
-                Applied regression and classification models to analyze stakeholder behavior and drive data-informed recommendations.            
-            </p>
-
-            <div class="project-skills">
-                <span>Regression Analysis</span>
-                <span>Classification Models</span>
-                <span>Python</span>
-                <span>Data Analysis</span>
-                <span>Model Interpretation</span>
-                <span>Business Insights</span>
-            </div>            
-
-            <a 
-                href="https://docs.google.com/presentation/d/1dB9JbMPjeEQebhnWXhg1x_uBjXmeZO1MpAO-BFVFA_0/edit?usp=sharing"
-                target="_blank"
+                target="_blank" class="btn"
             >
                 View Project Presentation 
             </a>
@@ -543,7 +816,7 @@
                         
             <a 
                 href="https://www.linkedin.com/posts/ethan-lopez-1a06642b1_these-past-three-semesters-i-had-the-pleasure-activity-7336955720073961472-bgBR/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEsGmggBJUHxmTFJ8XTgk0EUE_bb6E9W2Lc"
-                target="_blank"
+                target="_blank" class="btn"
             >
                 View Project Posts 
             </a>
@@ -564,137 +837,9 @@
                         
             <a 
                 href="https://ethanelopez04.wixsite.com/rc-scrap-build-1"
-                target="_blank"
+                target="_blank" class="btn"
             >
                 View Project Website 
-            </a>
-        </div>
-        <div class="card">
-            <h3>Kruskal's Algorithm</h3>
-            <p>
-                Implemented a C++ solution to compute minimum spanning tree costs from weighted adjacency matrices using Kruskal’s algorithm.            
-            </p>
-
-            <div class="project-skills">
-                <span>C++</span>
-                <span>Graph Theory</span>
-                <span>Minimum Spanning Trees</span>
-                <span>Algorithms</span>
-                <span>Data Structures</span>
-                <span>Time Complexity Analysis</span>
-            </div>
-                        
-            <a 
-                href="https://github.com/etCeO/.KrsklsAlgCpp"
-                target="_blank"
-            >
-                View Project Repository 
-            </a>
-        </div>
-        <div class="card">
-            <h3>Scare Games</h3>
-            <p>
-                Developed a binary tree simulation to manage tournament progression based on player scores.            
-            </p>
-
-            <div class="project-skills">
-                <span>C++</span>
-                <span>Binary Trees</span>
-                <span>Data Structures</span>
-                <span>Algorithm Design</span>
-                <span>Simulation</span>
-            </div>
-                        
-            <a 
-                href="https://github.com/etCeO/.ScrGmsCpp"
-                target="_blank"
-            >
-                View Project Repository 
-            </a>
-        </div>
-        <div class="card">
-            <h3>Blockchain Node Constructor</h3>
-            <p>
-                Built lightweight database components in C++ supporting real-time ingestion and queries.            
-            </p>
-
-            <div class="project-skills">
-                <span>C++</span>
-                <span>Blockchain Fundamentals</span>
-                <span>Database Design</span>
-                <span>Data Ingestion</span>
-                <span>Query Processing</span>
-                <span>Systems Programming</span>
-            </div>
-                        
-            <a 
-                href="https://github.com/etCeO/.BlkChnLdgrCpp"
-                target="_blank"
-            >
-                View Project Repository 
-            </a>
-        </div>
-        <div class="card">
-            <h3>Seat Reader View Analysis</h3>
-            <p>
-                Developed a seating analysis program that determines stage visibility using height and arrangement data.            
-            </p>
-
-            <div class="project-skills">
-                <span>C++</span>
-                <span>Algorithm Design</span>
-                <span>Array Processing</span>
-                <span>Data Analysis</span>
-                <span>Problem Solving</span>
-            </div>
-                        
-            <a 
-                href="https://github.com/etCeO/.StRdrVwCpp"
-                target="_blank"
-            >
-                View Project Repository 
-            </a>
-        </div>
-        <div class="card">
-            <h3>Not So Super Mario Bros.</h3>
-            <p>
-                Built a simulation that parses structured world data and models Mario’s progression, including enemy interactions, coin collection, and state updates.            
-            </p>
-
-            <div class="project-skills">
-                <span>C++</span>
-                <span>Simulation Modeling</span>
-                <span>State Management</span>
-                <span>Data Parsing</span>
-                <span>Algorithm Design</span>
-            </div>
-                        
-            <a 
-                href="https://github.com/etCeO/.MrioBrsGmCpp"
-                target="_blank"
-            >
-                View Project Repository 
-            </a>
-        </div>
-        <div class="card">
-            <h3>Robber Language Translator</h3>
-            <p>
-                Designed a translation tool that processes text input, applies Robber Language rules, and outputs formatted HTML content.            
-            </p>
-
-            <div class="project-skills">
-                <span>C++</span>
-                <span>String Manipulation</span>
-                <span>Parsing Algorithms</span>
-                <span>Text Processing</span>
-                <span>HTML Generation</span>
-            </div>
-                        
-            <a 
-                href="https://github.com/etCeO/.RbrTrnsltrCpp"
-                target="_blank"
-            >
-                View Project Repository 
             </a>
         </div>
         <div class="card">
@@ -713,76 +858,14 @@
                         
             <a 
                 href="https://docs.google.com/presentation/d/1YooA-lmfSAsrPho0ToxJqOEH9HB9zkyIAw8cuEpxCMk/edit?usp=sharing"
-                target="_blank"
+                target="_blank" class="btn"
             >
                 View Project Presentation 
             </a>
         </div>
-        <div class="card">
-            <h3>DigiShelf Virtual Library Simulation</h3>
-            <p>
-                Developed a library management simulation supporting catalog and customer operations.            
-            </p>
-
-            <div class="project-skills">
-                <span>Java</span>
-                <span>Object-Oriented Programming</span>
-                <span>System Simulation</span>
-                <span>Data Management</span>
-                <span>Software Design</span>
-            </div>
-                        
-            <a 
-                href="https://github.com/etCeO/.DigiShelfJvaLibs"
-                target="_blank"
-            >
-                View Project Repository 
-            </a>
         </div>
-        <div class="card">
-            <h3>SlapJack Card Game</h3>
-            <p>
-                Implemented game rules and combination detection to accurately simulate Slap gameplay scenarios.            
-            </p>
-
-            <div class="project-skills">
-                <span>Java</span>
-                <span>Game Logic</span>
-                <span>Algorithm Design</span>
-                <span>Rule-Based Systems</span>
-                <span>Simulation</span>
-            </div>
-                        
-            <a 
-                href="https://github.com/etCeO/.SlpJvaCrdGm"
-                target="_blank"
-            >
-                View Project Repository 
-            </a>
-        </div>
-        <div class="card">
-            <h3>Chipotle Ordering System</h3>
-            <p>
-                Built an ordering system simulation that handles ingredient selection, pricing logic, and receipt generation.            
-            </p>
-
-            <div class="project-skills">
-                <span>Java</span>
-                <span>Object-Oriented Programming</span>
-                <span>Business Logic</span>
-                <span>Pricing Algorithms</span>
-                <span>System Simulation</span>
-            </div>
-                        
-            <ul>
-            <a 
-                href="https://github.com/etCeO/.ChptleJvaBrrto"
-                target="_blank"
-            >
-                View Project Repository 
-            </a>
-            </ul>
-        </div>
+    </div>
+    
     </div>
 </section>
 
@@ -795,9 +878,9 @@
             feel free to reach out. <!-- contact invitation -->
         </p> <!-- contact details with links -->
         <p>Contact: 
-            <a href="mailto:ethanelopez04@gmail.com">Email</a> · 
-            <a href="https://www.linkedin.com/in/ethan-e-lopez/" target="_blank">LinkedIn</a> · 
-            <a href="https://github.com/etCeO" target="_blank">GitHub</a>
+            <a href="mailto:ethanelopez04@gmail.com" class="btn">Email</a> ·             
+            <a href="https://www.linkedin.com/in/ethan-e-lopez/" target="_blank" class="btn">LinkedIn</a> · 
+            <a href="https://github.com/etCeO" target="_blank" class="btn">GitHub</a>
         </p>
         <hr style="margin:1.5rem 0;">
 
